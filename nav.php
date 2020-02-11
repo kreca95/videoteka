@@ -23,8 +23,8 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li ><a href="index.php">Home</a></li>
-            <li><a href="">Registracija</a></li>
-            <li><a href="">Prijava</a></li>
+            <li><a href="registracija.php">Registracija</a></li>
+            <li><a href="prijava.php">Prijava</a></li>
             <li><a href="">Prijavljeni ste kao gost</a></li>
             <li><a href="">Odjava</a></li>
           </ul>
