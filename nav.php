@@ -25,16 +25,23 @@
             <li ><a href="index.php">Home</a></li>
             
 
-            <?php if (isset($_SESSION["email"]))
+            <?php if (isset($_SESSION["email"]) )
             {
               echo('<li><a href="">Prijavljeni ste kao '.$_SESSION["email"].'</a></li>');
-              echo('<li><a href="odjava.php">Odjava</a></li>');
-              echo('<li><a>Stanje racuna: '.$_SESSION['racun'].'</a></li>');
+              echo('<li><a href="odjava.php">Odjava</a></li>');           
+              $sql="SELECT StanjeRacuna FROM korisnik WHERE Id=".$_SESSION["ID"];
+              $result=$con->query($sql);
+              // echo($sql);
+              echo($_SESSION["ID"]);
+              while($row = $result->fetch_assoc() ) {
+                $stanje=$row["StanjeRacuna"];
+                echo('<li><a>Stanje racuna: '.$stanje.'</a></li>');
+            }
               if ($_SESSION["uloga"]=="Admin") {
-                echo('<li><a href="filmovi.php">Filmovi</a></li>');
-              }
-              
 
+                echo('<li><a href="filmovi.php">Filmovi</a></li>');
+                echo('<li><a href="stanjeracuna.php">Racuni</a></li>');
+              }
             }
             else
             {

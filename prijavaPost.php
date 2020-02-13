@@ -12,18 +12,20 @@ if(isset($_POST["email"]) && isset($_POST["sifra"]))
         $email=strtolower($_POST["email"]);
         $sifra=$_POST["sifra"];
 
-        $id="select u.Id as ID,ul.Naziv as uloga, u.StanjeRacuna as racun from korisnik as u INNER JOIN uloga as ul on ul.Id=u.UlogaId where u.Email='".$email."'";
+        $id="select u.Id as ID,ul.Naziv as uloga, u.StanjeRacuna as racun from korisnik as u INNER JOIN uloga as ul on ul.Id=u.UlogaId where u.Id='".$_SESSION["ID"]."'";
 
         $resultId=$con->query($id);
         // $rowId = $resultId->fetch_assoc();
+        $idKorisnik=0;
         while($row = $resultId->fetch_assoc() ) {
             $id=$row["ID"];
+            $idKorisnik=$row["ID"];
             $rowId=$row["uloga"];
             $racun=$row["racun"];
             echo($rowId);
         }
         
-        $_SESSION["ID"]=$id;
+        $_SESSION["ID"]=$idKorisnik;
 
         $_SESSION["uloga"]=$rowId;
 

@@ -8,7 +8,7 @@ $sql="UPDATE film as f set GodinaIzlaska=".$_POST["godina"].",ZanrId=".$_POST["z
 
 $result=$con->query($sql);
 echo($sql);
-// header("Location: filmovi.php");
+header("Location: filmovi.php");
 }
 else{
     echo("greska");
