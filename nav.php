@@ -32,15 +32,17 @@
               $sql="SELECT StanjeRacuna FROM korisnik WHERE Id=".$_SESSION["ID"];
               $result=$con->query($sql);
               // echo($sql);
-              echo($_SESSION["ID"]);
               while($row = $result->fetch_assoc() ) {
                 $stanje=$row["StanjeRacuna"];
                 echo('<li><a>Stanje racuna: '.$stanje.'</a></li>');
+                echo('<li><a>Id racuna: '.$_SESSION["ID"].'</a></li>');
+                echo('<li><a>Moje kupnje</a></li>');
+
             }
               if ($_SESSION["uloga"]=="Admin") {
 
                 echo('<li><a href="filmovi.php">Filmovi</a></li>');
-                echo('<li><a href="stanjeracuna.php">Racuni</a></li>');
+                echo('<li><a href="stanjeracuna.php">Uplata na racun</a></li>');
               }
             }
             else

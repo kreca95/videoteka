@@ -57,7 +57,7 @@ if (isset($_GET["kupovina"])) {
                   $result = $con->query($sql);    
                 }
                 $dugme="";
-                $stanje="SELECT StanjeRacuna FROM korisnik WHERE Id=".$_SESSION["ID"];
+                // $stanje="SELECT StanjeRacuna FROM korisnik WHERE Id=".$_SESSION["ID"];
                 while ($row = $result->fetch_assoc()) {
                   if ($row["Cijena"]>$stanje) {
                     $dugme='<p><a class="btn btn-danger" disabled>Nedovoljno novaca</a></p>';
