@@ -43,6 +43,7 @@
 
                 echo('<li><a href="filmovi.php">Filmovi</a></li>');
                 echo('<li><a href="stanjeracuna.php">Uplata na racun</a></li>');
+                echo('<li><a href="ugovori.php">Ugovori</a></li>');
               }
             }
             else
