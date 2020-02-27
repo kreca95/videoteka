@@ -36,7 +36,7 @@
                 $stanje=$row["StanjeRacuna"];
                 echo('<li><a>Stanje racuna: '.$stanje.'</a></li>');
                 echo('<li><a>Id racuna: '.$_SESSION["ID"].'</a></li>');
-                echo('<li><a>Moje kupnje</a></li>');
+                echo('<li><a href="mojekupnje.php">Moje kupnje</a></li>');
 
             }
               if ($_SESSION["uloga"]=="Admin") {

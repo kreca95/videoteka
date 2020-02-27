@@ -4,7 +4,7 @@
     require("nav.php");
 
 
-    $sql='select * from ugovor WHERE JeLiVraceno=0';
+    $sql='select * from ugovor WHERE JeLiPreuzeto=0';
 
     $result = $con->query($sql);
 
@@ -17,7 +17,7 @@
 <thead>
 <tr>
     <th>Id ugovora</th>
-    <th>Iznajmi</th>
+    <th>Odobravanje kupnje</th>
     <th>Cijena</th>
 </tr>
 </thead>
@@ -25,13 +25,10 @@
     <?php
                 while($row = $result->fetch_assoc()) {
                     $button="";
+                    if ($row["JeLiPreuzeto"]==false) {
+                        $button='<a href="ugovor.php?akcija=1&id='.$row["Id"].'" class="btn btn-info" value=0 >Odobri</a> ';
+                    }
 
-                    if ($row["JeLiPreuzeto"]==true) {
-                        $button='<a href="ugovor.php?akcija=0&id='.$row["Id"].'" class="btn btn-info" value=0 >Vrati</a> ';
-                    }
-                    else if($row["JeLiVraceno"]==false){
-                        $button='<a href="ugovor.php?akcija=1&id='.$row["Id"].'" class="btn btn-primary" value=1 >Iznajmi</a>';
-                    }
                     echo(
                         '
                         <tr>
