@@ -22,7 +22,7 @@
     </div>
     <div class="form-group">
       <label for="">Kolicina novca:</label>
-      <input type="number" class="form-control" name="novac" min="1">
+      <input type="number" class="form-control" name="novac" min="1" max="100">
     </div>
 
     <button type="submit" class="btn btn-info">Uplata</button>
