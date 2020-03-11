@@ -27,16 +27,17 @@
 
         <tbody>
         <?php
+            $result=$con->query($sql);
+
                 while ($row = $result->fetch_assoc()) {
                     echo
                     (
                         '<tr>'
                         .'<td>'.$row["Id"].'</td>'
-                        .'<td>'. $row["Suma"]. '</td>'
+                        .'<td>'. $row["suma"]. '</td>'
                         .'<td>'. $row["Naziv"].'</td>'
                         .'</tr>'
                     );
-                    echo("huyaa");
                 }
         ?>
         </tbody>
