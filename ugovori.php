@@ -2,7 +2,9 @@
     require("baza.php");
 
     require("nav.php");
-
+    if ($_SESSION["uloga"]!="Admin") {
+        header("Location: index.php");
+    }
 
     $sql='select * from ugovor WHERE JeLiPreuzeto=0';
 

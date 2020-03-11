@@ -1,6 +1,9 @@
 <?php
     require("baza.php");
-
+    session_start();
+    if ($_SESSION["uloga"]!="Admin") {
+        header("Location: index.php");
+    }
     if (isset($_GET["akcija"])&& isset($_GET["id"])) {
         if ($_GET["akcija"]==0) {
             $sql='UPDATE ugovor SET JeLiVraceno=1 WHERE Id='.$_GET["id"];

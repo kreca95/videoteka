@@ -1,6 +1,10 @@
 <?php
 require("baza.php");
+session_start();
 
+if ($_SESSION["uloga"]!="Admin") {
+    header("Location: index.php");
+}
 if (isset($_POST["zanr"]) && isset($_POST["film"]) && isset($_POST["godina"])  && isset($_POST["cijena"]) && isset($_POST["opis"]) && isset($_POST["glumci"])) {
     $values="(".$_POST["godina"].",".$_POST["zanr"].",".$_POST["cijena"].",'".$_POST["opis"]."','".$_POST["film"]."','".$_POST["glumci"]."')";
     // echo($values);

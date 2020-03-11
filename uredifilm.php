@@ -2,7 +2,9 @@
     require("baza.php");
     require("nav.php");
     $id=$_GET["id"];
-
+    if ($_SESSION["uloga"]!="Admin") {
+      header("Location: index.php");
+  }
     if (isset($id)) 
     {
         // dohvacanje proizvoda 

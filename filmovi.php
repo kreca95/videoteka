@@ -1,12 +1,14 @@
 <?php
     require("baza.php");
     require("nav.php");
-
+    if ($_SESSION["uloga"]!="Admin") {
+      header("Location: index.php");
+  }
 
 ?>
 
 <div class="container">
-  <h2>Mobiteli</h2>
+  <h2>Filmovi</h2>
   <a href="filmForma.php" class="btn btn-info">Dodajte film </a>
   <table class="table">
     <thead>

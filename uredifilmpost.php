@@ -1,4 +1,7 @@
 <?php
+if ($_SESSION["uloga"]!="Admin") {
+    header("Location: index.php");
+}
 require("baza.php");
 if (isset($_POST["zanr"]) && isset($_POST["film"]) && isset($_POST["godina"])  && isset($_POST["cijena"]) && isset($_POST["opis"]) && isset($_POST["glumci"])) {
 
