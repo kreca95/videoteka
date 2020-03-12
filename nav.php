@@ -1,6 +1,7 @@
   
 <?php 
   session_start();
+  $stanje=0;
 ?>
 <html lang="en">
 	<head>
@@ -42,6 +43,7 @@
               if ($_SESSION["uloga"]=="Admin") {
 
                 echo('<li><a href="filmovi.php">Filmovi</a></li>');
+                echo('<li><a href="zanrovi.php">Zanrovi</a></li>');
                 echo('<li><a href="stanjeracuna.php">Uplata na racun</a></li>');
                 echo('<li><a href="ugovori.php">Ugovori</a></li>');
               }

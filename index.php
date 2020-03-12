@@ -20,7 +20,7 @@ if (isset($_GET["kupovina"])) {
 
           <div class="jumbotron">
             <h1>Dobrodošli!</h1>
-            <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
+            <p>Dobrodošli na stranicu naše videoteke.</p>
             <?php
                 $sql="select * from zanr";
                 $result = $con->query($sql);
